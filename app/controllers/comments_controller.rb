@@ -3,21 +3,26 @@ class CommentsController < ApplicationController
 
   # GET /comments or /comments.json
   def index
+    @article = Article.find(params[:article_id])
     @comments = Comment.all
+    @comments = policy_scope(Comment)
   end
 
   # GET /comments/1 or /comments/1.json
   def show
+    authorize @comment
   end
 
   # GET /comments/new
   def new
     @comment = Comment.new
     @article = Article.find(params[:article_id])
+    authorize @comment
   end
 
   # GET /comments/1/edit
   def edit
+    authorize @comment
   end
 
   # POST /comments or /comments.json
@@ -26,6 +31,7 @@ class CommentsController < ApplicationController
     @article = Article.find(params[:article_id])
     @comment.user_id = current_user.id
     @comment.article_id = @article.id
+    authorize @comment
     respond_to do |format|
       if @comment.save
         format.html { redirect_to article_path(@article), notice: "Comment was successfully created." }
@@ -39,6 +45,7 @@ class CommentsController < ApplicationController
 
   # PATCH/PUT /comments/1 or /comments/1.json
   def update
+    authorize @comment
     respond_to do |format|
       if @comment.update(comment_params)
         format.html { redirect_to comment_url(@comment), notice: "Comment was successfully updated." }
@@ -53,9 +60,12 @@ class CommentsController < ApplicationController
   # DELETE /comments/1 or /comments/1.json
   def destroy
     @comment.destroy
+    @article = Article.find(params[:article_id])
+
+    authorize @comment
 
     respond_to do |format|
-      format.html { redirect_to comments_url, notice: "Comment was successfully destroyed." }
+      format.html { redirect_to article_path(@article), notice: "Comment was successfully destroyed." }
       format.json { head :no_content }
     end
   end

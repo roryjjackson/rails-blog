@@ -4,27 +4,32 @@ class ArticlesController < ApplicationController
   # GET /articles or /articles.json
   def index
     @articles = Article.all
+    @articles = policy_scope(Article)
   end
 
   # GET /articles/1 or /articles/1.json
   def show
     @article = Article.find(params[:id])
     @comments = Comment.where(article_id: @article)
+    authorize @article
   end
 
   # GET /articles/new
   def new
     @article = Article.new
+    authorize @article
   end
 
   # GET /articles/1/edit
   def edit
+    authorize @article
   end
 
   # POST /articles or /articles.json
   def create
     @article = Article.new(article_params)
     @article.user_id = current_user.id
+    authorize @article
     respond_to do |format|
       if @article.save
         format.html { redirect_to article_url(@article), notice: "Article was successfully created." }
@@ -38,6 +43,7 @@ class ArticlesController < ApplicationController
 
   # PATCH/PUT /articles/1 or /articles/1.json
   def update
+    authorize @article
     respond_to do |format|
       if @article.update(article_params)
         format.html { redirect_to article_url(@article), notice: "Article was successfully updated." }
@@ -52,6 +58,7 @@ class ArticlesController < ApplicationController
   # DELETE /articles/1 or /articles/1.json
   def destroy
     @article.destroy
+    authorize @article
 
     respond_to do |format|
       format.html { redirect_to articles_url, notice: "Article was successfully destroyed." }

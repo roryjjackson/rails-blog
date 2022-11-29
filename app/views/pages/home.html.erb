@@ -10,26 +10,10 @@
 <div class="articles-container">
     <div class="articles-grid">
       <% @articles.each do |article| %>
-        <%# <%= link_to article do %> %>
-          <%# <div class="article-card"> %>
-            <%= cl_image_tag article.photo.key %>
-            <div class="article-card-text">
-              <h2><%= article.title %></h2>
-              <p>Created by - <%= article.user_id %></p>
-              <p><%= article.created_at.to_date %></p>
-            </div>
-          <%# </div> %>
-        <%# <% end %> %>
+        <%= link_to article do %>
+          <div class="article-card">
+            <%= render article %>
+          </div>
+        <% end %>
       <% end %>
     </div>
-
-
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<div id="articles">
-  <% @articles.each do |article| %>
-    <%= render article %>
-    <p>
-      <%= link_to "Show this article", article %>
-    </p>
-  <% end %>
