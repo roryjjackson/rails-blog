@@ -5,6 +5,15 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.all
     @articles = policy_scope(Article)
+
+    @markers = @articles.geocoded.map do |article|
+      {
+        lat: article.latitude,
+        lng: article.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {article: article}),
+        image_url: helpers.asset_url("https://res.cloudinary.com/dfipoufmj/image/upload/v1669393163/24744ce9-95be-4ca9-9416-3c5effe76997_beqitg.jpg")
+      }
+    end
   end
 
   # GET /articles/1 or /articles/1.json
