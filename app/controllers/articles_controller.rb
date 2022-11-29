@@ -3,8 +3,8 @@ class ArticlesController < ApplicationController
 
   # GET /articles or /articles.json
   def index
-    @articles = Article.all
     @articles = policy_scope(Article)
+    @articles = Article.all
 
     @markers = @articles.geocoded.map do |article|
       {
@@ -83,6 +83,6 @@ class ArticlesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def article_params
-      params.require(:article).permit(:title, :location, :content, :latitude, :longitude, :category, :photo)
+      params.require(:article).permit(:title, :location, :content, :latitude, :longitude, :category, :photo, :address)
     end
 end
