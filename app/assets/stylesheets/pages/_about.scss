@@ -1,0 +1,18 @@
+#about-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  margin: 50px auto;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+}
+
+.about-info {
+  text-align: center;
+  margin: 30px 50px;
+}
+
+.about-info h1 {
+  margin-bottom: 30px;
+}

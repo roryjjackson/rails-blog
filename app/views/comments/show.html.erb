@@ -2,9 +2,8 @@
 
 <%= render @comment %>
 
-<div>
-  <%= link_to "Edit this comment", edit_comment_path(@comment) %> |
-  <%= link_to "Back to comments", comments_path %>
-
-  <%= button_to "Destroy this comment", @comment, method: :delete %>
+<div class="show-buttons">
+  <%= link_to "Edit this comment", edit_comment_path(@comment), class: "btn-ghost" %> |
+  <%= link_to "Back to comments", comments_path, class: "btn-ghost" %>
+  <%= link_to "delete the comment", article_comment_path(@comment), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn-ghost" if policy(@comment).destroy? %>
 </div>

@@ -1,0 +1,21 @@
+.comment-container {
+  border: solid black 1px;
+}
+
+.comment-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+}
+
+#comment-title {
+  text-align: center;
+  margin: 30px;
+}
+
+#comment-new-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
