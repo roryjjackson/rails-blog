@@ -2,6 +2,8 @@
   // justify-content: space-between;
   position: sticky;
   top: 0;
+  background: white;
+  z-index: 12;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -14,4 +16,20 @@
 
 .navbar-lewagon .container-fluid {
   justify-content: center;
+}
+
+.nav-link {
+  color: rgba(0, 0, 0, 0.79);
+  margin: 0 50px;
+}
+
+.nav-link:hover {
+  color: $flame-orange;
+}
+
+li.nav-item.dropdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
 }

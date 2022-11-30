@@ -13,7 +13,21 @@
 }
 .show-buttons {
   text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
+  margin: 50px;
 }
 .show-buttons a {
-  margin: 10px 30px;
+  margin: 10px 10px;
+}
+.comments-container {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.comment-content {
+  width: 300px;
+  border: solid rgba(0, 0, 0, 0.359) 1px;
 }

@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: solid rgba(0, 0, 0, 0.209) 1px;
+  border-top: solid rgba(0, 0, 0, 0.235) 1px;
   padding: 22px;
 }
 .wrapper {
@@ -12,11 +12,26 @@
   list-style: none;
   padding-left: 0;
   margin-bottom: 0;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer p {
   margin-bottom: 0;
   opacity: .7;
+}
+
+*:focus,
+*:active {
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+
+.wrapper {
+  display: inline-flex;
+  list-style: none;
 }
 
 .wrapper .icon {
@@ -41,7 +56,7 @@
   position: absolute;
   top: 0;
   font-size: 14px;
-  background: #ffffff;
+  background: black;
   color: #ffffff;
   padding: 5px 8px;
   border-radius: 5px;

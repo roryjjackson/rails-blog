@@ -1,10 +1,13 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @article %>
-
+<%# <div class="comments-container">
+  <% @comments.each do |comment| %>
+  <%# <p class="comment-content"><%= comment.content %>
+  <%# <% end %>
+<%# </div> %>
 <div class="show-buttons">
   <%= link_to "Edit this article", edit_article_path(@article), class: "btn-ghost" if policy(@article).edit? %>
-  <%= link_to "Back to articles", articles_path, class: "btn-ghost" %>
   <%= link_to "view comments", article_comments_path(@article), class: "btn-ghost" %>
   <%= link_to "delete the article", article_path(@article), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn-ghost" if policy(@article).destroy? %>
 </div>

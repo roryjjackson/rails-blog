@@ -1,2 +1,7 @@
-<h2><%= article.title %></h2>
-<p><%= article.address %></p>
+<%= link_to article do %>
+  <div class="map-popup">
+    <%= cl_image_tag article.photo.key, class: "article-map-img" %>
+    <h2><%= article.title %></h2>
+    <p><%= article.address %></p>
+  </div>
+<% end %>

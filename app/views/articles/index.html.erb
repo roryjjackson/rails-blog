@@ -1,21 +1,5 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Articles</h1>
-
-<div style="width: 100%; height: 600px;"
+<div
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
-
-<div id="articles">
-  <% @articles.each do |article| %>
-    <%= render article %>
-    <p>
-      <%= link_to "Show this article", article %>
-    </p>
-  <% end %>
-</div>
-
-
-<%= link_to "New article", new_article_path if policy(Article).new? %>
