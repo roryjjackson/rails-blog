@@ -9,9 +9,10 @@
     <% @articles.each do |article| %>
       <%= link_to article do %>
         <div class="article-card">
-          <%= render article %>
+          <%= cl_image_tag article.photo.key, class: "article-img" %>
+          <p><%= article.title %></p>
         </div>
       <% end %>
-    <% end %>
+    <% end%>
   </div>
 </div>

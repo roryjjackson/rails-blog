@@ -1,0 +1,19 @@
+.article-show-container img {
+  justify-content: center;
+  margin: 0 auto;
+  display: flex;
+  height: 500px;
+  width: 650px;
+  object-fit: cover;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+.article-show-content {
+  text-align: center;
+  margin: 50px 150px;
+}
+.show-buttons {
+  text-align: center;
+}
+.show-buttons a {
+  margin: 10px 30px;
+}

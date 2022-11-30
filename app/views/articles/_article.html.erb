@@ -1,32 +1,21 @@
-<div id="<%= dom_id article %>">
-  <p>
-    <strong>Title:</strong>
-    <%= article.title %>
-  </p>
+<%# <div id="<%= dom_id article %>
+<div class="article-show-container">
 
-  <p>
-    <strong>Location:</strong>
-    <%= article.location %>
-  </p>
+  <%= cl_image_tag article.photo.key %>
+  <div class="article-show-content">
+    <h1>
+      <%= article.title %>
+    </h1>
 
-  <p>
-    <strong>Content:</strong>
-    <%= article.content %>
-  </p>
+    <p>
+      <%= article.address %>
+    </p>
+    <p>
+      <%= article.category %>
+    </p>
 
-  <p>
-    <strong>Latitude:</strong>
-    <%= article.latitude %>
-  </p>
-
-  <p>
-    <strong>Longitude:</strong>
-    <%= article.longitude %>
-  </p>
-
-  <p>
-    <strong>Category:</strong>
-    <%= article.category %>
-  </p>
-  <%= cl_image_tag article.photo.key, height: 300, width: 400, crop: :fill %>
+    <p>
+      <%= article.content %>
+    </p>
+  </div>
 </div>
