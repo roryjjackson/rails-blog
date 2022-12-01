@@ -11,7 +11,7 @@ class ArticlesController < ApplicationController
         lat: article.latitude,
         lng: article.longitude,
         info_window: render_to_string(partial: "info_window", locals: {article: article}),
-        image_url: helpers.asset_url("https://res.cloudinary.com/dfipoufmj/image/upload/v1669393163/24744ce9-95be-4ca9-9416-3c5effe76997_beqitg.jpg")
+        image_url: helpers.asset_url("https://res.cloudinary.com/dfipoufmj/image/upload/v1669887491/Pngtree_location_vector_icon_4236431_a2leau.png")
       }
     end
   end

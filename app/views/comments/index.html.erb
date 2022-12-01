@@ -1,14 +1,18 @@
 <p style="color: green"><%= notice %></p>
 
+<%= render @article %>
 <h1 id="comment-title">Comments</h1>
+
 <div id="comment-new-btn">
   <%= link_to "New comment", new_article_comment_path, class: "btn-ghost" %>
 </div>
 
 <div id="comments">
   <% @comments.each do |comment| %>
-    <div class="show-buttons">
+    <div class="comment-container">
       <%= render comment %>
+    </div>
+    <div class="comment-btns">
       <%= link_to "Edit", edit_article_comment_path(@article, comment), class: "btn-ghost-small" if policy(comment).edit? %>
       <%= link_to "Delete", article_comment_path(@article, comment), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn-ghost-small" if policy(comment).destroy? %>
     </div>

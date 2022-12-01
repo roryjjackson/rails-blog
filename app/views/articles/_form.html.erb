@@ -4,17 +4,17 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :content %>
-    <%= f.input :category %>
+    <%= f.input :title, placeholder: "Name your article" %>
+    <%= f.input :content, placeholder: "Fill out the main content..." %>
+    <%= f.input :category, placeholder: "Category" %>
     <%= f.input :photo, as: :file %>
-    <%= f.input :address,
+    <%= f.input :address, placeholder: "Location",
                 input_html: {data: {address_autocomplete_target: "address"}},
                 wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
     %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, "Submit" %>
   </div>
 <% end %>

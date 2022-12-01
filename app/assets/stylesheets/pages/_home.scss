@@ -19,6 +19,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 50px auto;
 }
 
 .form-title {
@@ -81,3 +82,5 @@ a {
   align-items: end;
   color: $white;
 }
+
+@media screen and only {min-width: none;} and {max-width: auto;}

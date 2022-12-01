@@ -11,6 +11,8 @@ class CommentsController < ApplicationController
   # GET /comments/1 or /comments/1.json
   def show
     authorize @comment
+    @comment = Comment.find(params[:id])
+
   end
 
   # GET /comments/new
@@ -23,6 +25,9 @@ class CommentsController < ApplicationController
   # GET /comments/1/edit
   def edit
     authorize @comment
+    @comment = Comment.find(params[:id])
+    @article = Article.find(params[:article_id])
+
   end
 
   # POST /comments or /comments.json
@@ -46,9 +51,11 @@ class CommentsController < ApplicationController
   # PATCH/PUT /comments/1 or /comments/1.json
   def update
     authorize @comment
+    @comment = Comment.find(params[:id])
+    @article = Article.find(params[:article_id])
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to comment_url(@comment), notice: "Comment was successfully updated." }
+        format.html { redirect_to article_path(@article), notice: "Comment was successfully updated." }
         format.json { render :show, status: :ok, location: @comment }
       else
         format.html { render :edit, status: :unprocessable_entity }

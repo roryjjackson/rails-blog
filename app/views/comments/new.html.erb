@@ -1,9 +1,8 @@
-<h1>New comment</h1>
+<div class="comment-new-img">
+  <%= cl_image_tag @article.photo.key %>
+</div>
+<h1 class="form-title">Tell us what you think!</h1>
 
-<%= render "form", comment: @comment %>
-
-<br>
-
-<div>
-  <%= link_to "Back to comments", article_path(@article) %>
+<div class="form-container">
+  <%= render "form", comment: @comment %>
 </div>
