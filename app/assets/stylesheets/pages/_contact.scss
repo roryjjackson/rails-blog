@@ -112,62 +112,6 @@ textarea {
 }
 
 
-/* Social Media Icons */
-.social-media-list {
-  position: relative;
-  font-size: 22px;
-  text-align: center;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0;
-}
-
-.social-media-list li a {
-  color: black;
-}
-
-.social-media-list li {
-  position: relative;
-  display: inline-block;
-  height: 60px;
-  width: 60px;
-  margin: 10px 3px;
-  line-height: 60px;
-  border-radius: 50%;
-  color: #fff;
-  background-color: rgb(27,27,27);
-  cursor: pointer;
-  transition: all .2s ease-in-out;
-}
-
-.social-media-list li:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 60px;
-  height: 60px;
-  line-height: 60px;
-  border-radius: 50%;
-  opacity: 0;
-  box-shadow: 0 0 0 1px #fff;
-  transition: all .2s ease-in-out;
-}
-
-.social-media-list li:hover {
-  background-color: #fff;
-}
-
-.social-media-list li:hover:after {
-  opacity: 1;
-  transform: scale(1.12);
-  transition-timing-function: cubic-bezier(0.37,0.74,0.15,1.65);
-}
-
-.social-media-list li:hover a {
-  color: #000;
-}
-
 .copyright {
   font: 200 14px 'Oswald', sans-serif;
   color: #555;
@@ -242,8 +186,40 @@ hr {
 
 }
 
-@media screen and (max-width: 410px) {
+
+@media screen and (max-width: 450px){
   .send-button {
     width: 99%;
+  }
+
+  .contact-wrapper {
+    max-width: 400px;
+  }
+
+  /* Left contact page */
+  .form-horizontal {
+    /*float: left;*/
+    max-width: 280px;
+  }
+
+  .form-control,
+  textarea {
+    max-width: 280px;
+  }
+
+  .send-button {
+    width: 280px;
+  }
+
+  .alt-send-button {
+    width: 200px;
+  }
+  /* Begin Right Contact Page */
+  .direct-contact-container {
+    max-width: 280px;
+  }
+  .wrapper .icon {
+    width: 30px;
+    height: 30px;
   }
 }

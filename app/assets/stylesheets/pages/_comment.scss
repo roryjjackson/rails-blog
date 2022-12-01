@@ -54,3 +54,19 @@ textarea.form-control {
   object-fit: cover;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
+
+@media screen and (max-width: 450px){
+  .comment-container p {
+    font-size: 12px;
+  }
+  .comment-new-img {
+    justify-content: center;
+    margin: 70px auto;
+    display: flex;
+    height: 200px;
+    width: 255px;
+    object-fit: cover;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  }
+
+}
