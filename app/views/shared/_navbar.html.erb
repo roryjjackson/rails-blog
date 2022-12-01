@@ -1,25 +1,23 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
+    <a class="navbar-brand" href="/">
+      <img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1669383011/Pngtree_vector_yurt_icon_4015691_qc44ma.png" />
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", "/", class: "nav-link" %>
-          </li>
           <li class="nav-item">
             <%= link_to "Map", articles_path, class: "nav-link" %>
           </li>
-          <li class="nav-item">
-            <%= link_to "Contact", "/contact", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "About", "/about", class: "nav-link" %>
-          </li>
           <li class="nav-item dropdown">
-            <%= image_tag "https://res.cloudinary.com/dfipoufmj/image/upload/v1669887102/Pngtree_vector_creative_thinking_fig_1074842_t5sw6h.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://res.cloudinary.com/dfipoufmj/image/upload/v1668008512/bars-solid_1_kmyz0a.svg" />
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "New article", new_article_path, class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+              <a class="dropdown-item" href="/about">About us</a>
+              <a class="dropdown-item" href="/contact">Contact</a>
+              <a class="dropdown-item" data-turbo-method="delete" href="/users/sign_out">Log out</a>
             </div>
           </li>
         <% else %>
